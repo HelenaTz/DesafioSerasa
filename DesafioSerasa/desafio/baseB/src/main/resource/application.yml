@@ -1,0 +1,20 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/base_b
+  kafka:
+    bootstrap-servers: localhost:9092
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/serasa
+
+app:
+  ml-script-path: src/main/resources/scripts/calculate_score.py
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
