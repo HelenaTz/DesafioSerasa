@@ -30,8 +30,8 @@ public class BaseBService {
     }
 
     public ScoreResponse calculaScore(String cpf) {
-        UsuarioBaseB usuario = repositorio.buscaPeloCpf(cpf)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado na Base B"));
+        UsuarioBaseB usuario = repositorio.findByCpf(cpf)
+                .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado na Base B"));
 
         try {
 
@@ -54,7 +54,7 @@ public class BaseBService {
 
             return new ScoreResponse(cpf, score);
         } catch (Exception e) {
-            throw new RuntimeException("Falha no cálculo do score: " + e.getMessage());
+            throw new IllegalArgumentException("Falha no cálculo do score: " + e.getMessage());
         }
     }
 }

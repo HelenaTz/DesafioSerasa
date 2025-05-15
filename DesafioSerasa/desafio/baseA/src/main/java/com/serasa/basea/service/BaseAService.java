@@ -22,10 +22,10 @@ public class BaseAService {
 
         if(isCpfValido(cpf)){
             cpf = encryptor.encrypt(cpf);
-            return repository.encontraCpf(cpf)
-                    .orElseThrow(() -> new RuntimeException("CPF não encontrado"));
+            return repository.findByCpf(cpf)
+                    .orElseThrow(() -> new IllegalArgumentException("CPF não encontrado"));
         }else{
-            throw new Exception("CPF inválido");
+            throw new IllegalArgumentException("CPF inválido");
         }
     }
 

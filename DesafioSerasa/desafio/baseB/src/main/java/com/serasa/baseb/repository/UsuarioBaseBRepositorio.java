@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
 public interface UsuarioBaseBRepositorio extends MongoRepository<UsuarioBaseB, String> {
-    Optional<UsuarioBaseB> buscaPeloCpf(String cpf);
+    Optional<UsuarioBaseB> findByCpf(String cpf);
 }
