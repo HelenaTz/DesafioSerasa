@@ -1,7 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/base_a
-    username: admin
-    password: senhasegura
-  jpa:
-    hibernate.ddl-auto: update
